@@ -1,0 +1,48 @@
+.index_swiper swiper {
+  width: 750rpx;
+  height: 375rpx;
+}
+.index_swiper swiper swiper-item image {
+  width: 100%;
+}
+.index_bigType {
+  padding-top: 20 rpx;
+  background-color: #f7f7f7;
+}
+.index_bigType .bigTypeRow {
+  display: flex;
+}
+.index_bigType .bigTypeRow navigator {
+  flex: 1;
+}
+.index_bigType .bigTypeRow navigator image {
+  width: 150rpx;
+}
+.index_hotProduct .product_title {
+  font-size: 32rpx;
+  font-weight: 600;
+  padding: 20rpx;
+  color: var(--themeColor);
+  background-color: #e0e0e0;
+}
+.index_hotProduct .product_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.index_hotProduct .product_list .product_detail {
+  margin: 15rpx;
+  width: 46%;
+  text-align: center;
+}
+.index_hotProduct .product_list .product_detail navigator image {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.index_hotProduct .product_list .product_detail navigator .product_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.index_hotProduct .product_list .product_detail navigator .product_price {
+  color: var(--themeColor);
+}

@@ -1,0 +1,51 @@
+<view>
+  <!-- 搜索框开始 -->
+  <SearchBar></SearchBar>
+  <!-- 搜索框结束 -->
+
+  <!-- 轮播图开始 -->
+  <view>
+    <view class="index_swiper">
+      <swiper indicator-dots="true" circular="true" autoplay="true">
+        <swiper-item wx:for="{{swiperList}}" wx:for-item="swiper" wx:key="id">
+          <navigator url="/pages/product_detail/index?id={{swiper.id}}">
+            <image mode="widthFix" src="{{baseUrl+ '/image/swiper/' +swiper.swiperPic}}">
+            </image>
+          </navigator>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+
+  <!-- 热门推荐快速图标 -->
+  <view class="index_bigType">
+    <view class="bigTypeRow">
+      <navigator bindtap="handleTypeJump" data-index="{{index}}" wx:for="{{bigTypeList_row1}}" wx:for-item="bigType" wx:key="id">
+        <image mode="widthFix" src="{{baseUrl+ '/image/bigType/' +bigType.image}}">
+        </image>
+      </navigator>
+    </view>
+    <view class="bigTypeRow">
+      <navigator bindtap="handleTypeJump" data-index="{{index+5}}" wx:for="{{bigTypeList_row2}}" wx:for-item="bigType" wx:key="id">
+        <image mode="widthFix" src="{{baseUrl+ '/image/bigType/' +bigType.image}}">
+        </image>
+      </navigator>
+    </view>
+  </view>
+
+  <!-- 热卖推荐 -->
+  <view class="index_hotProduct">
+    <view class="product_title">热卖推荐</view>
+    <view class="product_list">
+      <view class="product_detail" wx:for="{{hotProductList}}" wx:for-item="hotProduct" wx:key="id">
+        <navigator url="/pages/product_detail/index?id={{hotProduct.id}}">
+          <image mode="widthFix" src="{{baseUrl+ '/image/product/' +hotProduct.proPic}}">
+          </image>
+          <view class="product_name">{{hotProduct.name}}</view>
+          <view class="product_price">￥ {{hotProduct.price}}</view>
+          <button size="mini" type="warn">立即购买</button>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
